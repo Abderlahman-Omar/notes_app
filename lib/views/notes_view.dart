@@ -13,15 +13,17 @@ class NotesView extends StatelessWidget {
         shape: const CircleBorder(),
         onPressed: () {
           showModalBottomSheet(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(
-                  16,
-                ),
+            isScrollControlled: true,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                16,
               ),
-              context: context,
-              builder: (context) {
-                return const AddNoteBottomSheet();
-              });
+            ),
+            context: context,
+            builder: (context) {
+              return const AddNoteBottomSheet();
+            },
+          );
         },
         child: const Icon(
           Icons.add,
